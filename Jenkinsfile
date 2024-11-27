@@ -20,5 +20,14 @@ pipeline {
                 '''
             }
         }
+
+        stage('Test') {
+            steps {
+                sh'''
+                test -f /workspaces/learn-jenkins-app/build/index.html
+                npm test
+                '''
+            }
+        }
     }
 }

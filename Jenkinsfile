@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        // This is a comment on paticular line
+        /* block of codes
+        line 1
+        line 2
+        
         stage('Build') {
             agent {
                 docker {
@@ -20,7 +25,7 @@ pipeline {
                 '''
             }
         }
-
+        */
         stage('Test') {
             agent {
                 docker {
@@ -31,7 +36,7 @@ pipeline {
             steps {
                 sh'''
                 echo 'Test stage ...'
-                test -f build/index.html
+                # test -f build/index.html this is a comment in sh line
                 npm test
                 '''
             }

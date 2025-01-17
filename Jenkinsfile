@@ -21,10 +21,12 @@ pipeline {
             }
         }
         stage('Test') {
-            sh '''
-                cat /workspaces/learn-jenkins-app/build/index.html
-                npm test
-            '''
+            steps {
+                sh '''
+                    cat /workspaces/learn-jenkins-app/build/index.html
+                    npm test
+                '''
+            }
         }
     }
 }
